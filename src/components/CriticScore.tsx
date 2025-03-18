@@ -7,7 +7,7 @@ interface Props {
 const CriticScore = ({ score }: Props) => {
   let bgColor =
     score > 75 ? "green.500" : score > 60 ? "yellow.500" : "red.500";
-  let textColor = "white"; // Ensure text remains visible
+  let textColor = "white";
 
   return (
     <Badge
