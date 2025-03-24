@@ -18,6 +18,7 @@ const NavTabs = () => {
             value={options.value}
             key={options.value}
             asChild
+            _focus={{ outline: "1px solid blue", outlineOffset: "2px" }}
           >
             <Link to={options.path}>{options.name}</Link>
           </Tabs.Trigger>

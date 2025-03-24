@@ -31,7 +31,7 @@ const Footer = () => {
       bottom={0}
       left={0}
       right={0}
-      bg="rgba(0, 0, 0, 0.5)"
+      bg="rgba(0, 0, 0)"
       color="white"
       width="100%"
     >

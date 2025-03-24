@@ -12,7 +12,7 @@ interface Props {
 const TextContainer = ({ title, children, path, label }: Props) => {
   return (
     <Center>
-      <Card.Root width="80%" marginBottom={20} variant="elevated">
+      <Card.Root width="80%" marginBottom={20} variant="elevated" height="70vh">
         <Card.Body gap="2">
           <Card.Title mt="2">{title}</Card.Title>
           <Card.Description>{children}</Card.Description>

@@ -5,4 +5,9 @@ form {
     font-family: 'Encode Sans', sans-serif;
   }
   
+  a:focus-visible, 
+  button:focus-visible {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+  }
   

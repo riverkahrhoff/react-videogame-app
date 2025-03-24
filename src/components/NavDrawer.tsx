@@ -11,10 +11,11 @@ const NavDrawer = () => {
   ];
 
   return (
-    <Drawer.Root>
+    <Drawer.Root placement="start">
       <Drawer.Trigger asChild>
         <Button variant="subtle" size="md" rounded="full">
           <MdOutlineMenu />
+          MENU
         </Button>
       </Drawer.Trigger>
       <Portal>
@@ -22,7 +23,7 @@ const NavDrawer = () => {
         <Drawer.Positioner padding="4">
           <Drawer.Content rounded="md">
             <Drawer.Header>
-              <Drawer.Title>Complete Optical</Drawer.Title>
+              <Drawer.Title>Complete Optical Lab</Drawer.Title>
             </Drawer.Header>
             <Drawer.Body>
               <p>
