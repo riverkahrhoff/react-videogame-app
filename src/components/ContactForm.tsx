@@ -16,7 +16,7 @@ interface FormValues {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: string; // Changed from number to string for better handling
+  phoneNumber: string;
   message: string;
 }
 
@@ -31,10 +31,8 @@ const ContactForm = () => {
   const onSubmit = (data: FormValues) => {
     console.log("Form Data:", data);
 
-    // Prepare EmailJS payload
     const templateParams = {
-      firstName: data.firstName,
-      lastName: data.lastName,
+      name: data.firstName + " " + data.lastName,
       email: data.email,
       phoneNumber: data.phoneNumber,
       message: data.message,
@@ -42,7 +40,7 @@ const ContactForm = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Corrected variable names
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
@@ -59,7 +57,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Flex minHeight="100vh" justifyContent="left" paddingTop={5}>
+    <Flex paddingTop={5}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack gap="4" maxW="sm">
           <HStack>

@@ -1,13 +1,19 @@
 import { Button, CloseButton, Drawer, Portal, VStack } from "@chakra-ui/react";
 import { MdOutlineMenu } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const NavDrawer = () => {
-  const drawerOptions = ["About Us", "Photo Gallery", "Contact Form"];
+  const drawerOptions = [
+    { value: "home", name: "Home", path: "/" },
+    { value: "about", name: "About", path: "/about" },
+    { value: "gallery", name: "Photos", path: "/gallery" },
+    { value: "contact", name: "Contact", path: "/contact" },
+  ];
 
   return (
     <Drawer.Root>
       <Drawer.Trigger asChild>
-        <Button variant="outline" size="md">
+        <Button variant="subtle" size="md" rounded="full">
           <MdOutlineMenu />
         </Button>
       </Drawer.Trigger>
@@ -19,11 +25,17 @@ const NavDrawer = () => {
               <Drawer.Title>Complete Optical</Drawer.Title>
             </Drawer.Header>
             <Drawer.Body>
-              <p>This is where something about the lab will go</p>
+              <p>
+                This is where something about the lab will go. Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Quis nemo natus
+                consectetur cumque delectus minus vero harum, numquam quam sit
+                eveniet voluptate nesciunt quaerat soluta a officiis libero
+                mollitia odio.
+              </p>
               <VStack gap={4} paddingTop={3}>
                 {drawerOptions.map((option) => (
-                  <Button variant="outline" key={option}>
-                    {option}
+                  <Button variant="subtle" key={option.value}>
+                    <Link to={option.path}>{option.name}</Link>
                   </Button>
                 ))}
               </VStack>
