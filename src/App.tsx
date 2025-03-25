@@ -13,8 +13,6 @@ function App() {
         <NavBar />
 
         <PageRoutes />
-
-        <Footer />
       </div>
     </Router>
   );

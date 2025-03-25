@@ -27,13 +27,13 @@ const Footer = () => {
     <Box
       as="footer"
       py={3}
-      position="fixed"
       bottom={0}
       left={0}
       right={0}
       bg="rgba(0, 0, 0)"
       color="white"
       width="100%"
+      zIndex={10}
     >
       <Container maxW="container.md">
         <Stack

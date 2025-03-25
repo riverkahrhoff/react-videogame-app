@@ -1,6 +1,7 @@
 import { Button, CloseButton, Drawer, Portal, VStack } from "@chakra-ui/react";
 import { MdOutlineMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { ColorModeButton } from "./ui/color-mode";
 
 const NavDrawer = () => {
   const drawerOptions = [
@@ -33,17 +34,28 @@ const NavDrawer = () => {
                 eveniet voluptate nesciunt quaerat soluta a officiis libero
                 mollitia odio.
               </p>
-              <VStack gap={4} paddingTop={3}>
-                {drawerOptions.map((option) => (
-                  <Button variant="subtle" key={option.value}>
-                    <Link to={option.path}>{option.name}</Link>
-                  </Button>
-                ))}
-              </VStack>
+              <Drawer.Context>
+                {(store) => (
+                  <VStack gap={4} paddingTop={3}>
+                    {drawerOptions.map((option) => (
+                      <Button
+                        key={option.value}
+                        variant="subtle"
+                        onClick={() => store.setOpen(false)} // ✅ Closes the drawer
+                      >
+                        <Link to={option.path}>{option.name}</Link>
+                      </Button>
+                    ))}
+                  </VStack>
+                )}
+              </Drawer.Context>
             </Drawer.Body>
             <Drawer.CloseTrigger asChild>
               <CloseButton size="sm" />
             </Drawer.CloseTrigger>
+            <Drawer.Footer>
+              <ColorModeButton />
+            </Drawer.Footer>
           </Drawer.Content>
         </Drawer.Positioner>
       </Portal>
