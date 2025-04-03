@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -7,13 +7,13 @@ import PageRoutes from "./PageRoutes";
 function App() {
   return (
     <Router>
-      <div
-        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
-      >
+      <Flex direction="column" minH="100vh">
         <NavBar />
-
-        <PageRoutes />
-      </div>
+        <Box flex="1">
+          <PageRoutes />
+        </Box>
+        <Footer />
+      </Flex>
     </Router>
   );
 }
